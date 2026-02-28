@@ -1,0 +1,59 @@
+<header class="top-nav">
+  <!-- Gradient clip-text title -->
+  <h1 class="top-nav__title" [style.--title-bg]="'url(' + titleGradient + ')'">
+    MPM Digital Intelligence Centre
+  </h1>
+
+  <!-- Right action group -->
+  <div class="top-nav__actions">
+    <!-- AI icon button -->
+    <button
+      class="top-nav__icon-btn top-nav__ai-btn"
+      type="button"
+      aria-label="AI Assistant"
+    >
+      <img [src]="aiIconBg" alt="" class="top-nav__ai-bg" />
+      <img [src]="aiIconInner" alt="" class="top-nav__ai-inner" />
+    </button>
+
+    <!-- Bell – DevExtreme DxButton with custom template -->
+    <dx-button
+      stylingMode="text"
+      class="top-nav__dx-btn"
+      hint="Notifications"
+      aria-label="Notifications"
+    >
+      <div *dxTemplate="let d of 'content'" class="top-nav__btn-content">
+        <span class="top-nav__bell-wrap">
+          <img [src]="bellIcon" alt="" width="20" height="20" />
+          @if (hasNotifications()) {
+            <img [src]="notifDot" alt="" class="top-nav__notif-dot" />
+          }
+        </span>
+      </div>
+    </dx-button>
+
+    <!-- 9-dot menu – DevExtreme DxButton with custom template -->
+    <dx-button
+      stylingMode="text"
+      class="top-nav__dx-btn"
+      hint="Apps"
+      aria-label="Apps"
+    >
+      <div *dxTemplate="let d of 'content'" class="top-nav__btn-content">
+        <img [src]="gridIcon" alt="" width="20" height="20" />
+      </div>
+    </dx-button>
+
+    <!-- Avatar with monogram -->
+    <div
+      class="top-nav__avatar"
+      role="button"
+      tabindex="0"
+      aria-label="User profile"
+    >
+      <img [src]="avatarBg" alt="" class="top-nav__avatar-bg" />
+      <span class="top-nav__avatar-initial">{{ userName() }}</span>
+    </div>
+  </div>
+</header>
