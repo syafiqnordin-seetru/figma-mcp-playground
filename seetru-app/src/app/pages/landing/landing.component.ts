@@ -1,4 +1,4 @@
-import { Component, signal, computed } from '@angular/core';
+﻿import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DxTooltipModule, DxTemplateModule } from 'devextreme-angular';
 import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
@@ -9,25 +9,25 @@ import { AppModule } from '../../shared/models/module.model';
 
 // Asset URLs served by Figma MCP localhost proxy
 const ICON_PSC =
-  'http://localhost:3845/assets/e15173eff595bb70c8c45b255beeec96b02dad93.svg'; // imgVector9  – PSC Module
+  '/assets/e15173eff595bb70c8c45b255beeec96b02dad93.svg'; // imgVector9  â€“ PSC Module
 const ICON_PROJECT =
-  'http://localhost:3845/assets/b856985d569f9a32b353e9527efea9fa20473186.png'; // imgIcon     – Project Mgmt
+  '/assets/b856985d569f9a32b353e9527efea9fa20473186.png'; // imgIcon     â€“ Project Mgmt
 const ICON_WELLS =
-  'http://localhost:3845/assets/7d2f7c8ae96eb642f820a9b8742d3a339e11a6c3.png'; // imgVector18 – Wells Mgmt
+  '/assets/7d2f7c8ae96eb642f820a9b8742d3a339e11a6c3.png'; // imgVector18 â€“ Wells Mgmt
 const ICON_ASSET =
-  'http://localhost:3845/assets/b4b82734afd24dfc26755a71d2b27e2adf054bff.png'; // imgVector19 – Asset Mgmt
+  '/assets/b4b82734afd24dfc26755a71d2b27e2adf054bff.png'; // imgVector19 â€“ Asset Mgmt
 const ICON_FACILITY =
-  'http://localhost:3845/assets/7a7ab3d705bcca81545db9724cbfbbf621f8d745.png'; // imgVector20 – Facility Improvement
+  '/assets/7a7ab3d705bcca81545db9724cbfbbf621f8d745.png'; // imgVector20 â€“ Facility Improvement
 const ICON_ABANDON =
-  'http://localhost:3845/assets/c59ffeef46bebdbfb3a5fbd5e6d9b3e327c01900.png'; // imgVector21 – Abandonment Mgmt
+  '/assets/c59ffeef46bebdbfb3a5fbd5e6d9b3e327c01900.png'; // imgVector21 â€“ Abandonment Mgmt
 const ICON_CONFIG =
-  'http://localhost:3845/assets/e140b6f9d6a067d6140e37dc1c11b7f12e15999d.svg'; // imgVector   – System Configuration
+  '/assets/e140b6f9d6a067d6140e37dc1c11b7f12e15999d.svg'; // imgVector   â€“ System Configuration
 
 // Info icons for section titles
 export const INFO_ICON_RECENT =
-  'http://localhost:3845/assets/084f20eaf7394d09c71558dfd47f1b070c246974.svg'; // imgVector17
+  '/assets/084f20eaf7394d09c71558dfd47f1b070c246974.svg'; // imgVector17
 export const INFO_ICON_MODULES =
-  'http://localhost:3845/assets/e01e0e3dbe22b91295f13918c520489aa6db5ee4.svg'; // imgVector22
+  '/assets/e01e0e3dbe22b91295f13918c520489aa6db5ee4.svg'; // imgVector22
 
 @Component({
   selector: 'app-landing',
@@ -100,10 +100,10 @@ export class LandingComponent {
     },
   ]);
 
-  // Recent modules — the first 6 (signal-derived)
+  // Recent modules â€” the first 6 (signal-derived)
   readonly recentModules = computed(() => this.allModules().slice(0, 6));
 
-  // My modules — the full list shown in detail cards
+  // My modules â€” the full list shown in detail cards
   readonly myModules = computed(() => this.allModules());
 
   // Grid rows: 4 per row
