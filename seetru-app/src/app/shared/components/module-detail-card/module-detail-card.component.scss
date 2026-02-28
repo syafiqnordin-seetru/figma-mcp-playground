@@ -1,13 +1,13 @@
 ﻿.module-detail-card {
   gap: 12px;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px 0 rgba(0, 48, 86, 0.08);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
   cursor: pointer;
   transition: box-shadow 0.2s, transform 0.15s;
 
   &:hover {
-    box-shadow: 0 12px 28px 0 rgba(0, 48, 86, 0.14);
+    box-shadow: var(--shadow-card-hover);
     transform: translateY(-2px);
   }
 
@@ -31,7 +31,7 @@
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.14px;
-    color: #333;
+    color: var(--color-text-primary);
   }
 
   &__description {
@@ -40,6 +40,6 @@
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.28px;
-    color: #333;
+    color: var(--color-text-primary);
   }
 }

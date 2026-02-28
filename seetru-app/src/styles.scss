@@ -62,8 +62,13 @@
   --color-shadow-card: rgba(0, 48, 86, 0.08);
   --color-sidebar-from: #4a5890;
   --color-sidebar-to: #009db6;
+  --color-sidebar-border: rgba(84, 127, 195, 0.5);
+  --color-sidebar-nav-hover: rgba(255, 255, 255, 0.15);
+  --color-shadow-card-hover: rgba(0, 48, 86, 0.14);
+  --color-btn-hover: rgba(0, 48, 86, 0.06);
   --font-museo: "Museo Sans", "Segoe UI", Arial, sans-serif;
   --shadow-card: 0 8px 20px 0 var(--color-shadow-card);
+  --shadow-card-hover: 0 12px 28px 0 var(--color-shadow-card-hover);
   --radius-card: 8px;
 }
 

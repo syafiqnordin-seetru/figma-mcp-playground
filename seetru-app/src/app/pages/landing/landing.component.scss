@@ -1,6 +1,6 @@
 ﻿.landing {
   min-height: 100vh;
-  background: #f1f5f9;
+  background: var(--color-bg);
 
   // Topography background pattern (from Figma)
   &__bg-pattern {
@@ -25,7 +25,7 @@
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.2px;
-    color: #333;
+    color: var(--color-text-primary);
   }
 
   // Info icon button — only non-Bootstrap styles remain
