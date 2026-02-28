@@ -8,20 +8,13 @@ import { ModuleDetailCardComponent } from '../../shared/components/module-detail
 import { AppModule } from '../../shared/models/module.model';
 
 // Asset URLs served by Figma MCP localhost proxy
-const ICON_PSC =
-  '/assets/e15173eff595bb70c8c45b255beeec96b02dad93.svg'; // imgVector9  â€“ PSC Module
-const ICON_PROJECT =
-  '/assets/b856985d569f9a32b353e9527efea9fa20473186.png'; // imgIcon     â€“ Project Mgmt
-const ICON_WELLS =
-  '/assets/7d2f7c8ae96eb642f820a9b8742d3a339e11a6c3.png'; // imgVector18 â€“ Wells Mgmt
-const ICON_ASSET =
-  '/assets/b4b82734afd24dfc26755a71d2b27e2adf054bff.png'; // imgVector19 â€“ Asset Mgmt
-const ICON_FACILITY =
-  '/assets/7a7ab3d705bcca81545db9724cbfbbf621f8d745.png'; // imgVector20 â€“ Facility Improvement
-const ICON_ABANDON =
-  '/assets/c59ffeef46bebdbfb3a5fbd5e6d9b3e327c01900.png'; // imgVector21 â€“ Abandonment Mgmt
-const ICON_CONFIG =
-  '/assets/e140b6f9d6a067d6140e37dc1c11b7f12e15999d.svg'; // imgVector   â€“ System Configuration
+const ICON_PSC = '/assets/e15173eff595bb70c8c45b255beeec96b02dad93.svg'; // imgVector9  â€“ PSC Module
+const ICON_PROJECT = '/assets/b856985d569f9a32b353e9527efea9fa20473186.png'; // imgIcon     â€“ Project Mgmt
+const ICON_WELLS = '/assets/7d2f7c8ae96eb642f820a9b8742d3a339e11a6c3.png'; // imgVector18 â€“ Wells Mgmt
+const ICON_ASSET = '/assets/b4b82734afd24dfc26755a71d2b27e2adf054bff.png'; // imgVector19 â€“ Asset Mgmt
+const ICON_FACILITY = '/assets/7a7ab3d705bcca81545db9724cbfbbf621f8d745.png'; // imgVector20 â€“ Facility Improvement
+const ICON_ABANDON = '/assets/c59ffeef46bebdbfb3a5fbd5e6d9b3e327c01900.png'; // imgVector21 â€“ Abandonment Mgmt
+const ICON_CONFIG = '/assets/icon-system-config.svg'; // Exported from Figma node 15161:508286
 
 // Info icons for section titles
 export const INFO_ICON_RECENT =
