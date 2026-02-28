@@ -1,0 +1,96 @@
+﻿<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">🚀 Seetru App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section (Bootstrap) -->
+<div class="bg-light py-5">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold text-primary">Angular 19 + Bootstrap + DevExtreme</h1>
+    <p class="lead text-muted">A fully configured starter project ready for development</p>
+    <div class="d-flex justify-content-center gap-3 mt-4">
+      <dx-button text="Get Started" type="default" stylingMode="contained" />
+      <dx-button text="Learn More" type="normal" stylingMode="outlined" />
+    </div>
+  </div>
+</div>
+
+<!-- Content Section -->
+<div class="container my-5">
+  <div class="row g-4 mb-5">
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body text-center p-4">
+          <div class="fs-1 mb-3">B</div>
+          <h5 class="card-title fw-bold">Bootstrap 5</h5>
+          <p class="card-text text-muted">Responsive grid, utilities, components and flexbox helpers.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body text-center p-4">
+          <div class="fs-1 mb-3">DX</div>
+          <h5 class="card-title fw-bold">DevExtreme</h5>
+          <p class="card-text text-muted">Rich UI widgets including DataGrid, Charts, Scheduler and 70+ more components.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0">
+        <div class="card-body text-center p-4">
+          <div class="fs-1 mb-3">A</div>
+          <h5 class="card-title fw-bold">Angular 19</h5>
+          <p class="card-text text-muted">Standalone components, signals, built-in control flow and latest Angular features.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DevExtreme TextBox -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-white fw-bold fs-5 border-0 pt-4 pb-0 px-4">DevExtreme TextBox Example</div>
+        <div class="card-body p-4">
+          <dx-text-box placeholder="Search something..." [showClearButton]="true" stylingMode="outlined" width="350" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DevExtreme DataGrid -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-white fw-bold fs-5 border-0 pt-4 pb-0 px-4">DevExtreme DataGrid Example</div>
+        <div class="card-body p-4">
+          <dx-data-grid [dataSource]="gridData" [showBorders]="true" [columnAutoWidth]="true" [rowAlternationEnabled]="true">
+          </dx-data-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Footer -->
+<footer class="bg-dark text-light py-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-1">Built with <strong>Angular 19</strong>, <strong>Bootstrap 5</strong> and <strong>DevExtreme</strong></p>
+    <small class="text-muted">Seetru Studio 2026</small>
+  </div>
+</footer>
+
+<router-outlet />

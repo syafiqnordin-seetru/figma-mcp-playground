@@ -1,0 +1,57 @@
+/* Bootstrap */
+@use "bootstrap/scss/bootstrap";
+
+/* DevExtreme */
+@import "devextreme/dist/css/dx.light.css";
+
+/* ─── Google Fonts — Raleway (Museo Sans proxy) ─────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
+
+/* ─── CSS Custom Properties ───────────────────────────────────────────────── */
+:root {
+  --color-primary: #003056;
+  --color-accent: #009db6;
+  --color-purple: #763f98;
+  --color-bg: #f1f5f9;
+  --color-bg-white: #ffffff;
+  --color-text-primary: #333333;
+  --color-text-deep: #3d3935;
+  --color-border: #dde4ee;
+  --color-error: #ec0000;
+  --color-shadow-card: rgba(0, 48, 86, 0.08);
+  --color-sidebar-from: #4a5890;
+  --color-sidebar-to: #009db6;
+  --font-museo: "Raleway", "Segoe UI", Arial, sans-serif;
+  --shadow-card: 0 8px 20px 0 var(--color-shadow-card);
+  --radius-card: 8px;
+}
+
+/* ─── Base reset ──────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: var(--font-museo);
+  font-size: 14px;
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+}
+
+/* ─── DevExtreme font override ────────────────────────────────────────────── */
+.dx-widget {
+  font-family: var(--font-museo) !important;
+}
