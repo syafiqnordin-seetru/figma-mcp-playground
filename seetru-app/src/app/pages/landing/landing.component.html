@@ -1,101 +1,88 @@
-<div class="landing">
-  <!-- ───────────── Topography background pattern ───────────── -->
+﻿<div class="landing position-relative w-100 overflow-hidden">
+  <!-- Background pattern -->
   <div class="landing__bg-pattern" aria-hidden="true"></div>
 
-  <!-- ───────────── App shell ───────────── -->
-  <div class="landing__shell">
+  <!-- App shell -->
+  <div class="landing__shell d-flex position-relative vh-100" style="z-index:1">
+
     <!-- Left sidebar -->
-    <div class="landing__sidebar-wrap">
+    <div class="d-flex align-items-stretch flex-shrink-0" style="padding: 8px 8px 16px 16px">
       <app-sidebar />
     </div>
 
     <!-- Main area -->
-    <main class="landing__main">
+    <main class="d-flex flex-column flex-grow-1 ps-2 overflow-auto" style="min-width:0">
+
       <!-- Sticky top navigation -->
-      <div class="landing__header">
+      <div class="sticky-top bg-transparent flex-shrink-0" style="padding: 28px 16px 16px 0; z-index:20">
         <app-top-nav />
       </div>
 
       <!-- Page content -->
-      <div class="landing__content">
-        <!-- ── Recent Modules ── -->
-        <section class="landing__section" aria-labelledby="recent-title">
-          <div class="landing__section-title">
-            <h2 id="recent-title" class="landing__heading">Recent modules</h2>
+      <div class="d-flex flex-column pe-3 pb-4" style="gap:40px">
+
+        <!-- Recent Modules -->
+        <section class="d-flex flex-column gap-3" aria-labelledby="recent-title">
+          <div class="d-flex align-items-center gap-2">
+            <h2 id="recent-title" class="landing__heading fw-bold mb-0">Recent modules</h2>
             <button
               id="recent-info-btn"
-              class="landing__info-btn"
+              class="landing__info-btn d-flex align-items-center justify-content-center border-0 bg-transparent p-0"
               aria-label="Info about recent modules"
             >
               <img [src]="infoIconRecent" alt="" width="16" height="16" />
             </button>
-            <dx-tooltip
-              target="#recent-info-btn"
-              showEvent="mouseenter"
-              hideEvent="mouseleave"
-            >
-              <div *dxTemplate="let d of 'content'">
-                Modules you have recently visited
-              </div>
+            <dx-tooltip target="#recent-info-btn" showEvent="mouseenter" hideEvent="mouseleave">
+              <div *dxTemplate="let d of 'content'">Modules you have recently visited</div>
             </dx-tooltip>
           </div>
-
-          <div class="landing__recent-grid">
+          <div class="d-flex flex-wrap align-items-center" style="gap:17px">
             @for (mod of recentModules(); track mod.id) {
               <app-module-card [module]="mod" />
             }
           </div>
         </section>
 
-        <!-- ── My Modules ── -->
-        <section class="landing__section" aria-labelledby="my-modules-title">
-          <div class="landing__section-title">
-            <h2 id="my-modules-title" class="landing__heading">My modules</h2>
+        <!-- My Modules -->
+        <section class="d-flex flex-column gap-3" aria-labelledby="my-modules-title">
+          <div class="d-flex align-items-center gap-2">
+            <h2 id="my-modules-title" class="landing__heading fw-bold mb-0">My modules</h2>
             <button
               id="my-modules-info-btn"
-              class="landing__info-btn"
+              class="landing__info-btn d-flex align-items-center justify-content-center border-0 bg-transparent p-0"
               aria-label="Info about my modules"
             >
               <img [src]="infoIconModules" alt="" width="16" height="16" />
             </button>
-            <dx-tooltip
-              target="#my-modules-info-btn"
-              showEvent="mouseenter"
-              hideEvent="mouseleave"
-            >
-              <div *dxTemplate="let d of 'content'">
-                Modules assigned to you
-              </div>
+            <dx-tooltip target="#my-modules-info-btn" showEvent="mouseenter" hideEvent="mouseleave">
+              <div *dxTemplate="let d of 'content'">Modules assigned to you</div>
             </dx-tooltip>
           </div>
 
-          <!-- Row 1: first 4 modules -->
-          <div class="landing__modules-row">
+          <!-- Row 1 -->
+          <div class="d-flex align-items-stretch gap-4">
             @for (mod of myModulesRow1(); track mod.id) {
-              <div class="landing__modules-cell">
+              <div class="flex-fill" style="min-width:0">
                 <app-module-detail-card [module]="mod" />
               </div>
             }
           </div>
 
-          <!-- Row 2: remaining modules -->
+          <!-- Row 2 -->
           @if (myModulesRow2().length > 0) {
-            <div class="landing__modules-row">
+            <div class="d-flex align-items-stretch gap-4">
               @for (mod of myModulesRow2(); track mod.id) {
-                <div class="landing__modules-cell">
+                <div class="flex-fill" style="min-width:0">
                   <app-module-detail-card [module]="mod" />
                 </div>
               }
-              <!-- Invisible spacers to maintain grid alignment when row is not full -->
               @for (_ of getSpacers(myModulesRow2().length); track $index) {
-                <div
-                  class="landing__modules-cell landing__modules-cell--spacer"
-                  aria-hidden="true"
-                ></div>
+                <div class="flex-fill landing__modules-cell--spacer" aria-hidden="true" style="min-width:0"></div>
               }
             </div>
           }
         </section>
+
       </div>
     </main>
   </div>

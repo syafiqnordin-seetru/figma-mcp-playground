@@ -1,6 +1,6 @@
-<article class="module-detail-card">
-  <header class="module-detail-card__header">
-    <div class="module-detail-card__icon-wrap">
+﻿<article class="module-detail-card d-flex flex-column h-100 bg-white">
+  <header class="module-detail-card__header d-flex align-items-center w-100">
+    <div class="module-detail-card__icon-wrap d-flex align-items-center justify-content-center overflow-hidden flex-shrink-0">
       <img
         [src]="module().iconUrl"
         [alt]="module().name + ' icon'"
@@ -8,7 +8,7 @@
         loading="lazy"
       />
     </div>
-    <h3 class="module-detail-card__title">{{ module().name }}</h3>
+    <h3 class="module-detail-card__title fw-bold mb-0 flex-grow-1">{{ module().name }}</h3>
   </header>
-  <p class="module-detail-card__description">{{ module().description }}</p>
+  <p class="module-detail-card__description mb-0 flex-grow-1">{{ module().description }}</p>
 </article>

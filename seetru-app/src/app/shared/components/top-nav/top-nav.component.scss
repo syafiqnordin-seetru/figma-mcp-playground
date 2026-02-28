@@ -1,19 +1,14 @@
 ﻿.top-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 56px;
-  width: 100%;
 
   &__title {
-    font-family: "Raleway", "Segoe UI", sans-serif;
+    font-family: var(--font-museo);
     font-weight: 700;
     font-size: 28px;
     line-height: 1;
     letter-spacing: 0.2px;
-    margin: 0;
     white-space: nowrap;
-    // Gradient clip-text: image URL is injected via CSS variable --title-bg
+    // Gradient clip-text via injected CSS variable
     background-image: var(--title-bg);
     background-size: cover;
     background-position: center;
@@ -23,48 +18,28 @@
     color: transparent;
   }
 
-  &__actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-  }
-
-  // Plain icon button base (used by AI button)
-  &__icon-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    padding: 0;
-  }
-
-  // AI circular button — stacks two images absolutely
+  // AI circular button — stacks two images
   &__ai-btn {
-    position: relative;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    cursor: pointer;
     overflow: visible;
   }
 
   &__ai-bg {
-    position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
   }
 
   &__ai-inner {
-    position: absolute;
     inset: 16.67%;
     width: 66.67%;
     height: 66.67%;
   }
 
-  // DevExtreme button wrapper sizing
+  // DevExtreme button wrapper
   &__dx-btn {
     width: 40px;
     height: 40px;
@@ -91,58 +66,33 @@
     }
   }
 
-  // Inner content wrapper for DxButton custom template
-  &__btn-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  // Fixed size for DxButton inner content
+  &__btn-size {
     width: 40px;
     height: 40px;
   }
 
-  // Bell wrapper — holds bell img + notification dot
-  &__bell-wrap {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   &__notif-dot {
-    position: absolute;
     top: -2px;
     right: -2px;
     width: 10px;
     height: 10px;
   }
 
-  // Avatar: stacks bg image + initial letter
   &__avatar {
-    position: relative;
     width: 32px;
     height: 32px;
-    border-radius: 50%;
-    overflow: hidden;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
   }
 
   &__avatar-bg {
-    position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
   }
 
   &__avatar-initial {
-    position: relative;
     z-index: 1;
-    font-family: "Raleway", "Segoe UI", sans-serif;
-    font-weight: 700;
+    font-family: var(--font-museo);
     font-size: 13px;
     color: #fff;
     line-height: 1;
