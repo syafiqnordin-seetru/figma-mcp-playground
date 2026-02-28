@@ -4,8 +4,49 @@
 /* DevExtreme */
 @import "devextreme/dist/css/dx.light.css";
 
-/* ─── Google Fonts — Raleway (Museo Sans proxy) ─────────────────────────── */
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
+/* ─── Museo Sans (self-hosted) ───────────────────────────────────────────── */
+@font-face {
+  font-family: "Museo Sans";
+  src: url("/assets/fonts/MuseoSans_300.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Museo Sans";
+  src: url("/assets/fonts/MuseoSans_300_Italic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Museo Sans";
+  src: url("/assets/fonts/MuseoSans_700.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Museo Sans";
+  src: url("/assets/fonts/MuseoSans_700_Italic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Museo Sans";
+  src: url("/assets/fonts/MuseoSans_900.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Museo Sans";
+  src: url("/assets/fonts/MuseoSans_900_Italic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 /* ─── CSS Custom Properties ───────────────────────────────────────────────── */
 :root {
@@ -21,7 +62,7 @@
   --color-shadow-card: rgba(0, 48, 86, 0.08);
   --color-sidebar-from: #4a5890;
   --color-sidebar-to: #009db6;
-  --font-museo: "Raleway", "Segoe UI", Arial, sans-serif;
+  --font-museo: "Museo Sans", "Segoe UI", Arial, sans-serif;
   --shadow-card: 0 8px 20px 0 var(--color-shadow-card);
   --radius-card: 8px;
 }

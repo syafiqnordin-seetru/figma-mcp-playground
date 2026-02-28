@@ -2,14 +2,21 @@
   min-height: 100vh;
   background: #f1f5f9;
 
-  // Topography background pattern
+  // Topography background pattern (from Figma)
   &__bg-pattern {
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 30 Q15 10 30 30 Q45 50 60 30' fill='none' stroke='%23c8d3e0' stroke-width='0.6' opacity='0.4'/%3E%3C/svg%3E");
-    background-size: 120px 80px;
+    top: -23.35%;
+    right: -30.13%;
+    bottom: 38.8%;
+    left: 22.31%;
     pointer-events: none;
     z-index: 0;
+  }
+
+  &__bg-pattern-img {
+    width: 1541.56px;
+    height: 790.239px;
+    transform: rotate(0.8deg);
+    flex-shrink: 0;
   }
 
   // Section heading typography
