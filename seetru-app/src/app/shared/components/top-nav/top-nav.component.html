@@ -1,26 +1,37 @@
 ﻿<header class="top-nav d-flex align-items-center justify-content-between w-100">
-
   <!-- Gradient clip-text title -->
-  <h1 class="top-nav__title mb-0" [style.--title-bg]="'url(' + titleGradient + ')'">
-    MPM Digital Intelligence Centre
-  </h1>
+  @if (pageTitle()) {
+    <h1
+      class="top-nav__title top-nav__title--page mb-0"
+      [style.--title-bg]="'url(' + titleGradient + ')'">
+      {{ pageTitle() }}
+    </h1>
+  } @else {
+    <h1 class="top-nav__title mb-0" [style.--title-bg]="'url(' + titleGradient + ')'">
+      MPM Digital Intelligence Centre
+    </h1>
+  }
 
   <!-- Right action group -->
   <div class="d-flex align-items-center gap-2 flex-shrink-0">
-
     <!-- AI icon button -->
     <button
       class="top-nav__ai-btn d-flex align-items-center justify-content-center border-0 bg-transparent p-0 position-relative"
       type="button"
-      aria-label="AI Assistant"
-    >
+      aria-label="AI Assistant">
       <img [src]="aiIconBg" alt="" class="top-nav__ai-bg position-absolute" />
       <img [src]="aiIconInner" alt="" class="top-nav__ai-inner position-absolute" />
     </button>
 
     <!-- Bell - DevExtreme DxButton with custom template -->
-    <dx-button stylingMode="text" class="top-nav__dx-btn" hint="Notifications" aria-label="Notifications">
-      <div *dxTemplate="let d of 'content'" class="top-nav__btn-size d-flex align-items-center justify-content-center">
+    <dx-button
+      stylingMode="text"
+      class="top-nav__dx-btn"
+      hint="Notifications"
+      aria-label="Notifications">
+      <div
+        *dxTemplate="let d of 'content'"
+        class="top-nav__btn-size d-flex align-items-center justify-content-center">
         <span class="position-relative d-inline-flex align-items-center justify-content-center">
           <img [src]="bellIcon" alt="" width="20" height="20" />
           @if (hasNotifications()) {
@@ -32,7 +43,9 @@
 
     <!-- 9-dot menu - DevExtreme DxButton with custom template -->
     <dx-button stylingMode="text" class="top-nav__dx-btn" hint="Apps" aria-label="Apps">
-      <div *dxTemplate="let d of 'content'" class="top-nav__btn-size d-flex align-items-center justify-content-center">
+      <div
+        *dxTemplate="let d of 'content'"
+        class="top-nav__btn-size d-flex align-items-center justify-content-center">
         <img [src]="gridIcon" alt="" width="20" height="20" />
       </div>
     </dx-button>
@@ -42,11 +55,9 @@
       class="top-nav__avatar position-relative d-flex align-items-center justify-content-center overflow-hidden rounded-circle flex-shrink-0"
       role="button"
       tabindex="0"
-      aria-label="User profile"
-    >
+      aria-label="User profile">
       <img [src]="avatarBg" alt="" class="position-absolute w-100 h-100 top-nav__avatar-bg" />
       <span class="top-nav__avatar-initial position-relative fw-bold">{{ userName() }}</span>
     </div>
-
   </div>
 </header>

@@ -1,0 +1,134 @@
+<dx-data-grid
+  class="data-table"
+  [dataSource]="dataSource()"
+  [showBorders]="false"
+  [showColumnLines]="false"
+  [showRowLines]="true"
+  [rowAlternationEnabled]="true"
+  [hoverStateEnabled]="true"
+  keyExpr="id">
+  <!-- Project name -->
+  <dxi-column
+    dataField="projectName"
+    caption="Project name"
+    [width]="188"
+    cellTemplate="projectNameTemplate"
+    headerCellTemplate="headerTemplate"></dxi-column>
+
+  <!-- PSC -->
+  <dxi-column
+    dataField="psc"
+    caption="PSC"
+    [width]="99"
+    headerCellTemplate="headerTemplate"></dxi-column>
+
+  <!-- Operator -->
+  <dxi-column
+    dataField="operator"
+    caption="Operator"
+    [width]="150"
+    headerCellTemplate="headerTemplate"></dxi-column>
+
+  <!-- Type -->
+  <dxi-column
+    dataField="type"
+    caption="Type"
+    [width]="72"
+    alignment="center"
+    headerCellTemplate="headerTemplate"></dxi-column>
+
+  <!-- Asset focal -->
+  <dxi-column
+    dataField="assetFocal"
+    caption="Asset focal"
+    [width]="143"
+    headerCellTemplate="headerTemplate"></dxi-column>
+
+  <!-- Current milestone -->
+  <dxi-column
+    dataField="currentMilestone"
+    caption="Current milestone"
+    cellTemplate="milestoneTemplate"
+    headerCellTemplate="headerTemplate"></dxi-column>
+
+  <!-- Status -->
+  <dxi-column
+    dataField="status"
+    caption="Status"
+    [width]="141"
+    cellTemplate="statusTemplate"
+    headerCellTemplate="headerTemplate"></dxi-column>
+
+  <!-- Next sitting -->
+  <dxi-column
+    dataField="nextSitting"
+    caption="Next sitting"
+    [width]="133"
+    headerCellTemplate="headerTemplate"></dxi-column>
+
+  <!-- Action -->
+  <dxi-column
+    caption="Action"
+    [width]="75"
+    alignment="center"
+    cellTemplate="actionTemplate"
+    headerCellTemplate="headerTemplate"></dxi-column>
+
+  <!-- Custom header template -->
+  <div *dxTemplate="let info of 'headerTemplate'" class="data-table__header-cell">
+    {{ info.column.caption }}
+  </div>
+
+  <!-- Project name template -->
+  <div
+    *dxTemplate="let row of 'projectNameTemplate'"
+    class="data-table__cell data-table__cell--name d-flex align-items-center">
+    @if (row.data.hasAlert) {
+      <span class="data-table__alert-icon" title="Alert">
+        <img [src]="alertIconUrl" alt="Alert" width="16" height="16" />
+      </span>
+    }
+    <span class="text-truncate">{{ row.data.projectName }}</span>
+  </div>
+
+  <!-- Milestone template -->
+  <div
+    *dxTemplate="let row of 'milestoneTemplate'"
+    class="data-table__cell data-table__cell--milestone d-flex align-items-center">
+    @if (row.data.hasAlert) {
+      <span class="data-table__alert-dot"></span>
+    }
+    <span class="text-truncate">{{ row.data.currentMilestone }}</span>
+  </div>
+
+  <!-- Status badge template -->
+  <div *dxTemplate="let row of 'statusTemplate'" class="data-table__cell d-flex align-items-center">
+    <span
+      class="data-table__status-badge"
+      [style.background]="getStatusStyle(row.data.status).bg"
+      [style.color]="getStatusStyle(row.data.status).color">
+      {{ row.data.status }}
+    </span>
+  </div>
+
+  <!-- Action template -->
+  <div
+    *dxTemplate="let row of 'actionTemplate'"
+    class="data-table__cell d-flex justify-content-center align-items-center">
+    <button
+      class="data-table__action-btn border-0 bg-transparent d-flex align-items-center justify-content-center">
+      <img [src]="moreIconUrl" alt="More actions" width="20" height="20" />
+    </button>
+  </div>
+
+  <!-- Pager -->
+  <dxo-pager
+    [showPageSizeSelector]="true"
+    [allowedPageSizes]="[10, 25, 50]"
+    [showInfo]="true"
+    infoText="{0}-{1} of {2} items"
+    [showNavigationButtons]="true"
+    [visible]="true"></dxo-pager>
+
+  <dxo-paging [pageSize]="10"></dxo-paging>
+</dx-data-grid>

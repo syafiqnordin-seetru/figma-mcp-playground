@@ -1,12 +1,17 @@
-﻿<article class="module-detail-card d-flex flex-column h-100 bg-white">
+﻿<article
+  class="module-detail-card d-flex flex-column h-100 bg-white"
+  [class.module-detail-card--clickable]="!!moduleRoute()"
+  [routerLink]="moduleRoute()"
+  role="link"
+  [tabindex]="moduleRoute() ? 0 : -1">
   <header class="module-detail-card__header d-flex align-items-center w-100">
-    <div class="module-detail-card__icon-wrap d-flex align-items-center justify-content-center overflow-hidden flex-shrink-0">
+    <div
+      class="module-detail-card__icon-wrap d-flex align-items-center justify-content-center overflow-hidden flex-shrink-0">
       <img
         [src]="module().iconUrl"
         [alt]="module().name + ' icon'"
         class="module-detail-card__icon"
-        loading="lazy"
-      />
+        loading="lazy" />
     </div>
     <h3 class="module-detail-card__title fw-bold mb-0 flex-grow-1">{{ module().name }}</h3>
   </header>

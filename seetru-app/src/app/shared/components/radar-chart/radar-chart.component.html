@@ -1,0 +1,49 @@
+<div class="radar-chart bg-white d-flex flex-column">
+  <!-- Header -->
+  <div class="radar-chart__header d-flex flex-column">
+    <span class="radar-chart__title">{{ title() }}</span>
+  </div>
+
+  <!-- Filter buttons -->
+  @if (filterLabels().length > 0) {
+    <div class="d-flex align-items-center justify-content-end gap-2 mb-2">
+      @for (lbl of filterLabels(); track lbl) {
+        <button
+          class="radar-chart__filter-btn d-flex align-items-center gap-1 border-0 bg-transparent">
+          <span class="radar-chart__filter-label">{{ lbl }}</span>
+          <img [src]="chevronDownUrl" alt="" width="12" height="12" />
+        </button>
+      }
+    </div>
+  }
+
+  <!-- DxPolarChart -->
+  <dx-polar-chart
+    class="radar-chart__chart flex-grow-1"
+    [dataSource]="chartData()"
+    [palette]="palette()"
+    type="line"
+    [useSpiderWeb]="true">
+    <dxo-common-series-settings type="line" argumentField="axis" valueField="value" [closed]="true">
+      <dxo-point [visible]="true" [size]="6"></dxo-point>
+    </dxo-common-series-settings>
+
+    <dxo-series-template nameField="project"></dxo-series-template>
+
+    <dxo-argument-axis>
+      <dxo-label [font]="{ size: 11, color: '#555' }"></dxo-label>
+    </dxo-argument-axis>
+
+    <dxo-value-axis [min]="0" [max]="100">
+      <dxo-label [visible]="false"></dxo-label>
+      <dxo-grid [visible]="true"></dxo-grid>
+    </dxo-value-axis>
+
+    <dxo-legend
+      verticalAlignment="bottom"
+      horizontalAlignment="center"
+      [itemTextPosition]="'right'"></dxo-legend>
+
+    <dxo-tooltip [enabled]="true"></dxo-tooltip>
+  </dx-polar-chart>
+</div>

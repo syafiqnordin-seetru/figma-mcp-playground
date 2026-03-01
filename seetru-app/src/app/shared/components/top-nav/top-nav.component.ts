@@ -1,4 +1,4 @@
-﻿import { Component, signal } from '@angular/core';
+﻿import { Component, input, signal } from '@angular/core';
 import { DxButtonModule, DxTemplateModule } from 'devextreme-angular';
 
 const TITLE_GRADIENT = '/assets/d57b8ead4576fa08ebc5dfadf3d7d4ef70fdf5a5.png';
@@ -24,6 +24,9 @@ export class TopNavComponent {
   readonly notifDot = NOTIF_DOT;
   readonly gridIcon = GRID_ICON;
   readonly avatarBg = AVATAR_BG;
+
+  /** Optional override for the header title text. Defaults to main app title. */
+  readonly pageTitle = input<string>('');
 
   readonly userName = signal('D');
   readonly hasNotifications = signal(true);

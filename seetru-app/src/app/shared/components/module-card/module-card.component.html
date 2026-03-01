@@ -2,14 +2,14 @@
   class="module-card d-flex flex-column align-items-center border-0 p-0 overflow-hidden"
   [attr.aria-label]="module().name"
   [title]="module().name"
->
-  <div class="module-card__icon-wrap d-flex align-items-center justify-content-center w-100 bg-white">
+  [routerLink]="moduleRoute()">
+  <div
+    class="module-card__icon-wrap d-flex align-items-center justify-content-center w-100 bg-white">
     <img
       [src]="module().iconUrl"
       [alt]="module().name + ' icon'"
       class="module-card__icon flex-shrink-0"
-      loading="lazy"
-    />
+      loading="lazy" />
   </div>
   <span class="module-card__label d-block w-100 bg-white text-center fw-bold text-truncate">
     {{ module().name }}

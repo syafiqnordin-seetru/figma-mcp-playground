@@ -8,7 +8,9 @@
   background: transparent;
   cursor: pointer;
   box-shadow: var(--shadow-card);
-  transition: box-shadow 0.2s, transform 0.15s;
+  transition:
+    box-shadow 0.2s,
+    transform 0.15s;
 
   &:hover {
     box-shadow: var(--shadow-card-hover);

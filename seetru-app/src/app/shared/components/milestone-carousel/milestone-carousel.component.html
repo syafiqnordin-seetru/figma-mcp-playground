@@ -1,0 +1,51 @@
+<div class="milestone-carousel position-relative d-flex align-items-center">
+  <!-- Prev button -->
+  <button
+    class="milestone-carousel__nav milestone-carousel__nav--prev d-flex align-items-center justify-content-center border-0 flex-shrink-0"
+    (click)="scrollPrev()"
+    aria-label="Scroll left">
+    <img [src]="chevronLeftUrl" alt="" width="18" height="18" />
+  </button>
+
+  <!-- Scrollable track -->
+  <div class="milestone-carousel__track d-flex" #track>
+    @for (item of milestones(); track item.name) {
+      <div class="milestone-card d-flex flex-column bg-white flex-shrink-0">
+        <!-- Card header -->
+        <div class="milestone-card__header fw-bold">{{ item.name }}</div>
+
+        <!-- Total row -->
+        <div class="milestone-card__row d-flex align-items-center justify-content-between">
+          <span class="milestone-card__label">Total</span>
+          <span class="milestone-card__value">{{ item.total }}</span>
+        </div>
+
+        <!-- Delayed row -->
+        <div
+          class="milestone-card__row milestone-card__row--delayed d-flex align-items-center justify-content-between">
+          <span class="milestone-card__label">Delayed</span>
+          <span class="milestone-card__value">{{ item.delayed }}</span>
+        </div>
+
+        <!-- On track row -->
+        <div class="milestone-card__row d-flex align-items-center justify-content-between">
+          <span class="milestone-card__label">On track</span>
+          <span class="milestone-card__value">{{ item.onTrack }}</span>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Next button -->
+  <button
+    class="milestone-carousel__nav milestone-carousel__nav--next d-flex align-items-center justify-content-center border-0 flex-shrink-0"
+    (click)="scrollNext()"
+    aria-label="Scroll right">
+    <img
+      [src]="chevronLeftUrl"
+      alt=""
+      width="18"
+      height="18"
+      class="milestone-carousel__nav-icon--flipped" />
+  </button>
+</div>

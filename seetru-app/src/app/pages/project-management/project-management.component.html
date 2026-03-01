@@ -1,0 +1,161 @@
+﻿<div class="pm-page d-flex vh-100 overflow-hidden">
+  <!-- Sidebar -->
+  <div class="pm-page__sidebar-wrap d-flex flex-shrink-0">
+    <app-sidebar />
+  </div>
+
+  <!-- Main area -->
+  <main class="d-flex flex-column flex-grow-1 overflow-hidden ps-2">
+    <!-- Top nav -->
+    <div class="pm-page__topnav flex-shrink-0">
+      <app-top-nav pageTitle="Project Management" />
+    </div>
+
+    <!-- Scrollable content -->
+    <div class="pm-page__content flex-grow-1 overflow-auto pe-3 pb-4 d-flex flex-column gap-3">
+      <!-- ─── KPI Section ─── -->
+      <section>
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h2 class="pm-page__section-title mb-0">Project overview</h2>
+          <span class="pm-page__date">Information as of 26 Jun 2025</span>
+        </div>
+        <div class="pm-page__kpi-row d-flex">
+          @for (kpi of kpis(); track kpi.label) {
+            <app-kpi-card
+              class="pm-page__kpi-item"
+              [label]="kpi.label"
+              [value]="kpi.value"
+              [iconUrl]="kpi.iconUrl"
+              [hasInfo]="kpi.hasInfo ?? false"
+              [infoIconUrl]="kpi.infoIconUrl ?? ''" />
+          }
+        </div>
+      </section>
+
+      <!-- ─── Milestones ─── -->
+      <section>
+        <app-milestone-carousel [milestones]="milestones()" />
+      </section>
+
+      <!-- ─── Analysis Charts ─── -->
+      <section>
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h2 class="pm-page__section-title mb-0">Project analysis</h2>
+          <button
+            class="pm-page__collapse-btn d-flex align-items-center border-0 bg-transparent p-0"
+            (click)="toggleAnalysis()">
+            <span class="pm-page__collapse-label">
+              {{ analysisCollapsed() ? 'Expand' : 'Collapse' }}
+            </span>
+            <img
+              [src]="icons.chevronUp"
+              alt=""
+              width="16"
+              height="16"
+              class="pm-page__collapse-icon"
+              [class.pm-page__collapse-icon--rotated]="analysisCollapsed()" />
+          </button>
+        </div>
+
+        @if (!analysisCollapsed()) {
+          <div class="row g-3">
+            <!-- Row 1: scatter | scatter | radar -->
+            <div class="col-4">
+              <app-scatter-chart
+                [title]="scatterCharts()[0].title"
+                [subtitle]="scatterCharts()[0].subtitle"
+                [chartData]="scatterCharts()[0].data"
+                [xLabel]="scatterCharts()[0].xLabel"
+                [yLabel]="scatterCharts()[0].yLabel"
+                [filterLabels]="scatterCharts()[0].filterLabels" />
+            </div>
+            <div class="col-4">
+              <app-scatter-chart
+                [title]="scatterCharts()[1].title"
+                [subtitle]="scatterCharts()[1].subtitle"
+                [chartData]="scatterCharts()[1].data"
+                [xLabel]="scatterCharts()[1].xLabel"
+                [yLabel]="scatterCharts()[1].yLabel"
+                [filterLabels]="scatterCharts()[1].filterLabels" />
+            </div>
+            <div class="col-4">
+              <app-radar-chart
+                [title]="radarCharts()[0].title"
+                [chartData]="radarCharts()[0].data"
+                [filterLabels]="radarCharts()[0].filterLabels" />
+            </div>
+
+            <!-- Row 2: scatter | scatter | radar -->
+            <div class="col-4">
+              <app-scatter-chart
+                [title]="scatterCharts()[2].title"
+                [subtitle]="scatterCharts()[2].subtitle"
+                [chartData]="scatterCharts()[2].data"
+                [xLabel]="scatterCharts()[2].xLabel"
+                [yLabel]="scatterCharts()[2].yLabel"
+                [filterLabels]="scatterCharts()[2].filterLabels" />
+            </div>
+            <div class="col-4">
+              <app-scatter-chart
+                [title]="scatterCharts()[3].title"
+                [subtitle]="scatterCharts()[3].subtitle"
+                [chartData]="scatterCharts()[3].data"
+                [xLabel]="scatterCharts()[3].xLabel"
+                [yLabel]="scatterCharts()[3].yLabel"
+                [filterLabels]="scatterCharts()[3].filterLabels" />
+            </div>
+            <div class="col-4">
+              <app-radar-chart
+                [title]="radarCharts()[1].title"
+                [chartData]="radarCharts()[1].data"
+                [filterLabels]="radarCharts()[1].filterLabels" />
+            </div>
+          </div>
+        }
+      </section>
+
+      <!-- ─── Sanctioning ─── -->
+      <section>
+        <h2 class="pm-page__section-title mb-3">Sanctioning</h2>
+
+        <!-- Filter + Action bar -->
+        <div class="d-flex align-items-center justify-content-between mb-3 gap-3">
+          <!-- Filter pills -->
+          <div class="d-flex align-items-center gap-2 flex-wrap">
+            @for (filter of tableFilters; track filter) {
+              <button class="pm-page__filter-pill d-flex align-items-center">
+                <span>{{ filter }}</span>
+                <img [src]="icons.chevronDown" alt="" width="12" height="12" />
+              </button>
+            }
+          </div>
+
+          <!-- Action buttons -->
+          <div class="d-flex align-items-center gap-2">
+            <!-- Search -->
+            <button
+              class="pm-page__icon-btn d-flex align-items-center justify-content-center border-0 bg-transparent">
+              <img [src]="icons.search" alt="" width="20" height="20" />
+            </button>
+
+            <!-- Create project -->
+            <button class="pm-page__create-btn d-flex align-items-center gap-2">
+              <img [src]="icons.plus" alt="" width="16" height="16" />
+              <span>Create project</span>
+            </button>
+
+            <!-- Download -->
+            <button
+              class="pm-page__icon-btn d-flex align-items-center justify-content-center border-0 bg-transparent">
+              <img [src]="icons.download" alt="" width="20" height="20" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <app-data-table [dataSource]="tableData()" />
+      </section>
+    </div>
+    <!-- /content -->
+  </main>
+</div>

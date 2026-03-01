@@ -1,0 +1,54 @@
+<div class="scatter-chart bg-white d-flex flex-column">
+  <!-- Header -->
+  <div class="scatter-chart__header d-flex flex-column">
+    <span class="scatter-chart__title">{{ title() }}</span>
+    @if (subtitle()) {
+      <span class="scatter-chart__subtitle">{{ subtitle() }}</span>
+    }
+  </div>
+
+  <!-- Filter buttons -->
+  @if (filterLabels().length > 0) {
+    <div class="d-flex align-items-center justify-content-end gap-2 mb-2">
+      @for (lbl of filterLabels(); track lbl) {
+        <button
+          class="scatter-chart__filter-btn d-flex align-items-center gap-1 border-0 bg-transparent">
+          <span class="scatter-chart__filter-label">{{ lbl }}</span>
+          <img [src]="chevronDownUrl" alt="" width="12" height="12" />
+        </button>
+      }
+    </div>
+  }
+
+  <!-- DxChart -->
+  <dx-chart
+    class="scatter-chart__chart flex-grow-1"
+    [dataSource]="chartData()"
+    [palette]="palette()"
+    [animation]="{ enabled: true }">
+    <dxo-common-series-settings type="scatter" argumentField="x" valueField="y">
+      <dxo-point [size]="10"></dxo-point>
+    </dxo-common-series-settings>
+
+    <dxo-series-template nameField="category"></dxo-series-template>
+
+    <dxo-argument-axis>
+      <dxo-title [text]="xLabel()"></dxo-title>
+      <dxo-label [font]="{ size: 11 }"></dxo-label>
+    </dxo-argument-axis>
+
+    <dxi-value-axis>
+      <dxo-title [text]="yLabel()"></dxo-title>
+      <dxo-label [font]="{ size: 11 }"></dxo-label>
+    </dxi-value-axis>
+
+    <dxo-legend
+      verticalAlignment="bottom"
+      horizontalAlignment="center"
+      [itemTextPosition]="'right'"></dxo-legend>
+
+    <dxo-tooltip [enabled]="true" [shared]="false"></dxo-tooltip>
+
+    <dxo-zoom-and-pan [argumentAxis]="'both'"></dxo-zoom-and-pan>
+  </dx-chart>
+</div>

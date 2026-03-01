@@ -2,6 +2,43 @@
   min-height: 100vh;
   background: var(--color-bg);
 
+  // App shell z-index layer
+  &__shell {
+    z-index: 1;
+  }
+
+  // Sidebar outer padding wrapper
+  &__sidebar-wrap {
+    padding: 8px 8px 16px 16px;
+  }
+
+  // Main content area
+  &__main {
+    min-width: 0;
+  }
+
+  // Sticky top-nav wrapper
+  &__topnav {
+    padding: 28px 16px 16px 0;
+    z-index: 20;
+  }
+
+  // Scrollable page content
+  &__content {
+    gap: 40px;
+  }
+
+  // Recent modules flex row
+  &__recent-row {
+    gap: 17px;
+  }
+
+  // Equal-width cell for module detail cards
+  &__modules-cell {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
   // Topography background pattern (from Figma)
   &__bg-pattern {
     top: -23.35%;

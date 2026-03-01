@@ -17,10 +17,8 @@ const ICON_ABANDON = '/assets/c59ffeef46bebdbfb3a5fbd5e6d9b3e327c01900.png'; // 
 const ICON_CONFIG = '/assets/icon-system-config.svg'; // Exported from Figma node 15161:508286
 
 // Info icons for section titles
-export const INFO_ICON_RECENT =
-  '/assets/084f20eaf7394d09c71558dfd47f1b070c246974.svg'; // imgVector17
-export const INFO_ICON_MODULES =
-  '/assets/e01e0e3dbe22b91295f13918c520489aa6db5ee4.svg'; // imgVector22
+export const INFO_ICON_RECENT = '/assets/084f20eaf7394d09c71558dfd47f1b070c246974.svg'; // imgVector17
+export const INFO_ICON_MODULES = '/assets/e01e0e3dbe22b91295f13918c520489aa6db5ee4.svg'; // imgVector22
 
 @Component({
   selector: 'app-landing',

@@ -1,0 +1,90 @@
+﻿:host {
+  display: block;
+}
+
+.milestone-carousel {
+  backdrop-filter: blur(3px);
+  background: var(--color-milestone-bg);
+  border-radius: 16px;
+  padding: 16px;
+  gap: 12px;
+  overflow: hidden;
+
+  &__nav {
+    width: 36px;
+    height: 36px;
+    border-radius: 100px;
+    background: var(--color-purple);
+    cursor: pointer;
+    transition:
+      background 0.15s,
+      opacity 0.15s;
+    flex-shrink: 0;
+
+    &:hover {
+      background: var(--color-purple-hover);
+      opacity: 0.9;
+    }
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &__nav-icon--flipped {
+    transform: scaleX(-1);
+  }
+
+  &__track {
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.milestone-card {
+  width: 192px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  padding: 16px;
+  gap: 8px;
+
+  &__header {
+    font-family: var(--font-museo);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--color-text-primary);
+    padding-bottom: 4px;
+    border-bottom: 0.5px solid var(--color-milestone-divider);
+    margin-bottom: 4px;
+  }
+
+  &__row {
+    padding: 4px 8px;
+    border-radius: 6px;
+
+    &--delayed {
+      background: var(--color-milestone-row-delayed);
+    }
+  }
+
+  &__label {
+    font-family: var(--font-museo);
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--color-text-primary);
+    letter-spacing: 0.28px;
+  }
+
+  &__value {
+    font-family: var(--font-museo);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--color-text-primary);
+    letter-spacing: 0.28px;
+  }
+}

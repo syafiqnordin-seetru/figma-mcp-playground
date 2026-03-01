@@ -1,0 +1,17 @@
+<div class="kpi-card d-flex align-items-center justify-content-between bg-white">
+  <!-- Left: label + value -->
+  <div class="kpi-card__text d-flex flex-column gap-1">
+    <div class="kpi-card__label-row d-flex align-items-center">
+      <span class="kpi-card__label text-truncate">{{ label() }}</span>
+      @if (hasInfo() && infoIconUrl()) {
+        <img [src]="infoIconUrl()" alt="info" class="kpi-card__info-icon flex-shrink-0" />
+      }
+    </div>
+    <span class="kpi-card__value">{{ value() }}</span>
+  </div>
+
+  <!-- Right: icon -->
+  <div class="kpi-card__icon-wrap d-flex align-items-center justify-content-center flex-shrink-0">
+    <img [src]="iconUrl()" alt="" class="kpi-card__icon" />
+  </div>
+</div>

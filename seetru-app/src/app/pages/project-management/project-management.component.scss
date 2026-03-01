@@ -1,0 +1,125 @@
+﻿:host {
+  display: block;
+}
+
+.pm-page {
+  background: var(--color-bg);
+
+  // Sidebar outer padding wrapper
+  &__sidebar-wrap {
+    padding: 8px 8px 16px 16px;
+  }
+
+  // Top-nav padding wrapper
+  &__topnav {
+    padding: 28px 24px 16px 0;
+  }
+
+  // KPI cards flex row
+  &__kpi-row {
+    gap: 12px;
+  }
+
+  // Individual KPI card — equal-width stretch
+  &__kpi-item {
+    flex: 1 1 0;
+  }
+
+  &__content {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-scrollbar) transparent;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--color-scrollbar);
+      border-radius: 3px;
+    }
+  }
+
+  &__section-title {
+    font-family: var(--font-museo);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+  }
+
+  &__date {
+    font-family: var(--font-museo);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+  }
+
+  &__collapse-btn {
+    gap: 6px;
+
+    &:hover .pm-page__collapse-label {
+      text-decoration: underline;
+    }
+  }
+
+  &__collapse-label {
+    font-family: var(--font-museo);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-purple);
+  }
+
+  &__collapse-icon {
+    transition: transform 0.2s;
+
+    &--rotated {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__filter-pill {
+    gap: 6px;
+    padding: 6px 16px 6px 20px;
+    border: 1.2px solid var(--color-purple);
+    border-radius: 100px;
+    background: transparent;
+    cursor: pointer;
+    font-family: var(--font-museo);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-purple);
+    transition: background 0.15s;
+
+    &:hover {
+      background: var(--color-purple-btn-hover);
+    }
+  }
+
+  &__icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+
+    &:hover {
+      background: var(--color-bg-hover) !important;
+    }
+  }
+
+  &__create-btn {
+    padding: 8px 20px;
+    background: var(--color-purple);
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: var(--font-museo);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-bg-white);
+    transition: background 0.15s;
+
+    &:hover {
+      background: var(--color-purple-hover);
+    }
+  }
+}

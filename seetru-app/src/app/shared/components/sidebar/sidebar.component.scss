@@ -35,7 +35,9 @@
     border-radius: 8px;
     background: transparent;
     cursor: pointer;
-    transition: background 0.2s, opacity 0.2s;
+    transition:
+      background 0.2s,
+      opacity 0.2s;
 
     img {
       object-fit: contain;

@@ -1,0 +1,132 @@
+﻿:host {
+  display: block;
+}
+
+.data-table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: var(--color-bg-white);
+
+  // DevExtreme overrides
+  ::ng-deep {
+    .dx-datagrid {
+      font-family: var(--font-museo);
+      color: var(--color-text-primary);
+    }
+
+    .dx-datagrid-headers {
+      background: var(--color-bg-white);
+      border-bottom: 1.5px solid var(--color-border);
+
+      .dx-datagrid-table .dx-row > td {
+        padding: 12px 16px;
+        color: var(--color-text-secondary);
+        font-size: 14px;
+        font-weight: 700;
+        border: none;
+      }
+    }
+
+    .dx-datagrid-rowsview .dx-row {
+      height: 44px;
+
+      > td {
+        padding: 0 16px;
+        font-size: 14px;
+        font-weight: 500;
+        border-bottom: 1px solid var(--color-border-light);
+        vertical-align: middle;
+      }
+    }
+
+    .dx-row-alt > td,
+    .dx-row-alt > tr > td {
+      background-color: var(--color-bg-alt) !important;
+    }
+
+    .dx-datagrid-borders > .dx-datagrid-header-panel,
+    .dx-datagrid-borders > .dx-datagrid-filter-panel,
+    .dx-datagrid-borders > .dx-datagrid-pager {
+      border: none;
+    }
+
+    .dx-pager {
+      padding: 12px 16px;
+      border-top: 1px solid var(--color-border);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-deep);
+      background: var(--color-bg-white);
+
+      .dx-page,
+      .dx-navigate-button {
+        color: var(--color-text-deep);
+      }
+
+      .dx-selection {
+        background: var(--color-purple) !important;
+        color: var(--color-bg-white) !important;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &__header-cell {
+    font-family: var(--font-museo);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+  }
+
+  &__cell {
+    gap: 6px;
+    height: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+
+    &--name {
+      font-weight: 500;
+    }
+
+    &--milestone {
+      position: relative;
+    }
+  }
+
+  &__status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  &__alert-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-error);
+    flex-shrink: 0;
+  }
+
+  &__alert-icon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  &__action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+
+    &:hover {
+      background: var(--color-bg) !important;
+    }
+  }
+}
